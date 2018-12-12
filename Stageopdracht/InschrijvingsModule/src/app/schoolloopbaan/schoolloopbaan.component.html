@@ -1,0 +1,90 @@
+<div class="central">
+  <div>
+    <h1 class="inline-display h1-blue">Schoolloopbaan </h1>
+    <div class="border">
+      <h3 class="border-gray-background">Invullen schoolloopbaan</h3>
+      <div class="little-left-margin">
+        <div class="border" *ngIf="jaar == 1">
+          <h3 class="border-gray-background">Basisonderwijs schets kort het schoolverloop (opmerkingen, veranderen van school, zittenblijven, ...)</h3>
+          <div class="little-left-margin">
+            <form class="little-top-margin">
+              <mat-form-field class="twenty-percent-width">
+                <input matInput placeholder="Leerjaar" [formControl]="basisLeerjaar1" [(ngModel)]="basisLeerjaarGeg1">
+              </mat-form-field>
+              <mat-form-field class="seventy-percent-width">
+                <input matInput placeholder="School (naam + gemeente)" [formControl]="basisSchool1" [(ngModel)]="basisSchoolGeg1">
+              </mat-form-field>
+              <div class="block-display"></div>
+              <mat-form-field class="seventy-percent-width">
+                <mat-label>Opmerkingen? Overzitten? Waarom?</mat-label>
+                <textarea matInput cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="2" cdkAutosizeMaxRows="10" [formControl]="opmerkingen1"
+                  [(ngModel)]="opmerkingenGeg1"></textarea>
+              </mat-form-field>
+              <div class="block-display"></div>
+              <mat-form-field class="twenty-percent-width">
+                <input matInput placeholder="Leerjaar" [formControl]="basisLeerjaar2" [(ngModel)]="basisLeerjaarGeg2">
+              </mat-form-field>
+              <mat-form-field class="seventy-percent-width">
+                <input matInput placeholder="School (naam + gemeente)" [formControl]="basisSchool2" [(ngModel)]="basisSchoolGeg2">
+              </mat-form-field>
+              <div class="block-display"></div>
+              <mat-form-field class="seventy-percent-width">
+                <mat-label>Opmerkingen? Overzitten? Waarom?</mat-label>
+                <textarea matInput cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="2" cdkAutosizeMaxRows="10" [formControl]="opmerkingen2"
+                  [(ngModel)]="opmerkingenGeg2"></textarea>
+              </mat-form-field>
+            </form>
+          </div>
+        </div>
+        <div class="border">
+          <h3 class="border-gray-background">Secundair onderwijs (opmerkingen, veranderen van school, zittenblijven, ...)</h3>
+          <div class="little-left-margin">
+            <form class="little-top-margin">
+              <mat-form-field class="twenty-percent-width">
+                <input matInput placeholder="Leerjaar" [formControl]="secundairLeerjaar1" [(ngModel)]="secundairLeerjaarGeg1">
+              </mat-form-field>
+              <mat-form-field class="seventy-percent-width">
+                <input matInput placeholder="School (naam + gemeente)" [formControl]="secundairSchool1" [(ngModel)]="secundairSchoolGeg1">
+              </mat-form-field>
+              <div class="block-display"></div>
+              <mat-form-field class="seventy-percent-width">
+                <mat-label>Studierichting, Attest A/B/C, Advies, ...</mat-label>
+                <textarea matInput cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="2" cdkAutosizeMaxRows="10" [formControl]="opmerkingen3"
+                  [(ngModel)]="opmerkingenGeg3"></textarea>
+              </mat-form-field>
+              <div class="block-display"></div>
+              <mat-form-field class="twenty-percent-width">
+                <input matInput placeholder="Leerjaar" [formControl]="secundairLeerjaar2" [(ngModel)]="secundairLeerjaarGeg2">
+              </mat-form-field>
+              <mat-form-field class="seventy-percent-width">
+                <input matInput placeholder="School (naam + gemeente)" [formControl]="secundairSchool2" [(ngModel)]="secundairSchoolGeg2">
+              </mat-form-field>
+              <div class="block-display"></div>
+              <mat-form-field class="seventy-percent-width">
+                <mat-label>Studierichting, Attest A/B/C, Advies, ...</mat-label>
+                <textarea matInput cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="2" cdkAutosizeMaxRows="10" [formControl]="opmerkingen4"
+                  [(ngModel)]="opmerkingenGeg4"></textarea>
+              </mat-form-field>
+              <div class="block-display"></div>
+              <mat-form-field class="twenty-percent-width">
+                <input matInput placeholder="Leerjaar" [formControl]="secundairLeerjaar3" [(ngModel)]="secundairLeerjaarGeg3">
+              </mat-form-field>
+              <mat-form-field class="seventy-percent-width">
+                <input matInput placeholder="School (naam + gemeente)" [formControl]="secundairSchool3" [(ngModel)]="secundairSchoolGeg3">
+              </mat-form-field>
+              <div class="block-display"></div>
+              <mat-form-field class="seventy-percent-width">
+                <mat-label>Studierichting, Attest A/B/C, Advies, ...</mat-label>
+                <textarea matInput cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="2" cdkAutosizeMaxRows="10" [formControl]="opmerkingen5"
+                  [(ngModel)]="opmerkingenGeg5"></textarea>
+              </mat-form-field>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="central-sub">
+    <button mat-raised-button class="inschrijving-button bold-text" (click)="updateInschrijving()" routerLink="/inlichtingen" [routerLinkActive]="'current'">Volgende ></button>
+  </div>
+</div>

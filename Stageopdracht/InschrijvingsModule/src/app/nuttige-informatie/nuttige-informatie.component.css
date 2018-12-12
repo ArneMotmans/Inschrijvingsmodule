@@ -1,0 +1,97 @@
+.central {
+    margin: auto;
+    width: 50%;
+}
+
+.central-sub {
+    margin: auto;
+    width: 25%;
+    margin-top: 10px;
+}
+
+.bold-text {
+    font-weight: bold;
+}
+
+.twenty-percent-width {
+    width: 20%;
+    margin-right: 10px;
+}
+
+.forty-percent-width {
+    width: 40%;
+}
+
+.seventy-percent-width {
+    width: 70%;
+}
+
+.border-gray-background {
+    border: 5px;
+    border-style: groove;
+    background: rgb(190, 193, 197);
+    margin-top: 0px;
+}
+
+.border {
+    border: 1px;
+    border-style: solid;
+    margin: 5px;
+}
+
+.top-margin-change {
+    margin-top: 20px;
+}
+
+.little-left-margin {
+    margin-left: 10px;
+}
+
+.block-display {
+    display: block;
+}
+
+.little-top-margin {
+    margin-top: 5px;
+}
+
+.reader-button {
+    background: gray;
+    margin-bottom: 5px;
+}
+
+.search-button {
+    background: gray;
+    float: right;
+}
+
+.little-width-change {
+    width: 60%;
+}
+
+.example-container {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+.select-menu {
+    width: 80%;
+}
+
+.inline-display {
+    display: inline;
+}
+
+.inschrijving-button {
+    background: gray;
+    
+}
+
+.little-bottom-margin {
+    margin-bottom: 5px;
+}
+
+h1 {
+    color: blue;
+}

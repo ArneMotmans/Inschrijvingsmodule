@@ -1,0 +1,31 @@
+<div class="central">
+  <div>
+    <h1 class="inline-display h1-blue">Bijkomende info</h1>
+    <div class="border">
+      <h3 class="border-gray-background">Extra info leerling</h3>
+      <div class="little-left-margin">
+        <mat-form-field class="textarea-opmerkingen seventy-percent-width">
+          <mat-label>Wat kan uw kind goed? Wat zijn zijn/haar sterke punten? (Hobby's/talenten)</mat-label>
+          <textarea matInput cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="2" cdkAutosizeMaxRows="10" [formControl]="bijkomendSterkePunten"
+            [(ngModel)]="bijkomendSterkePuntenGeg"></textarea>
+        </mat-form-field>
+        <div class="block-display"></div>
+        <mat-form-field class="textarea-opmerkingen seventy-percent-width">
+          <mat-label>Doet uw zoon/dochter aan sport?</mat-label>
+          <textarea matInput cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="2" cdkAutosizeMaxRows="10" [formControl]="bijkomendSport"
+            [(ngModel)]="bijkomendSportGeg"></textarea>
+        </mat-form-field>
+        <div class="block-display"></div>
+        <mat-radio-group class="bold-text" [formControl]="competitieSport" [(ngModel)]="competitieSportGeg">
+            <label>Competitiesport?</label>
+            <mat-radio-button value="Ja">Ja</mat-radio-button>
+            <mat-radio-button value="Neen">Neen</mat-radio-button>
+        </mat-radio-group>
+      </div>
+    </div>
+  </div>
+  <div class="central-sub">
+    <button mat-raised-button class="inschrijving-button bold-text" routerLink="/bijkomende-info-lang" [routerLinkActive]="'current'"
+      (click)="updateInschrijving()">Volgende ></button>
+  </div>
+</div>

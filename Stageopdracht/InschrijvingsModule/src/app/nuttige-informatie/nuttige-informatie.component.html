@@ -1,0 +1,61 @@
+<div class="central" ng-app="myApp" ng-controller="myCtrl">
+  <div>
+    <h1 class="inline-display">Nuttige informatie</h1>
+  </div>
+  <div class="border top-margin-change" style="padding-bottom: 10px;">
+    <h3 class="border-gray-background">Invullen nuttige informatie</h3>
+    <div class="little-left-margin">
+      <form class="little-top-margin">
+        <mat-form-field class="twenty-percent-width">
+          <input matInput placeholder="Aantal broers" [formControl]="aantalBroers" [(ngModel)]="aantalBroersGeg">
+        </mat-form-field>
+        <mat-form-field class="twenty-percent-width">
+          <input matInput placeholder="Aantal zussen" [formControl]="aantalZussen" [(ngModel)]="aantalZussenGeg">
+        </mat-form-field>
+        <mat-form-field class="twenty-percent-width">
+          <input matInput placeholder="Leerling is hoeveelste?" [formControl]="leerlingHoeveelste" [(ngModel)]="leerlingHoeveelsteGeg">
+        </mat-form-field>
+        <div class="block-display"></div>
+        <mat-form-field class="seventy-percent-width">
+          <input matInput placeholder="Indien reeds een broer of zus in de school was/is, geef namen" [formControl]="reedsOpSchool"
+            [(ngModel)]="reedsOpSchoolGeg">
+        </mat-form-field>
+        <div class="block-display"></div>
+        <mat-form-field class="forty-percent-width">
+          <input matInput placeholder="Naam van de huisdokter" aria-label="Huisdokter" [matAutocomplete]="huisdokterAuto" [formControl]="huisdokterNaam" [(ngModel)]="huisdokterNaamGeg">
+          <mat-autocomplete #huisdokterAuto="matAutocomplete">
+            <mat-option *ngFor="let huisdokter of filteredHuisdokters | async" [value]="huisdokter.naam">
+              <span>{{huisdokter.naam}}</span>
+            </mat-option>
+          </mat-autocomplete>
+        </mat-form-field>
+        <div class="block-display"></div>
+        <mat-radio-group class="bold-text" [formControl]="communicatieOuders" [(ngModel)]="communicatieOudersGeg">
+          <label style="font-size: 20px; text-decoration: underline;">Communicatie met de ouders als de thuistaal niet Nederlands is: </label>
+          <div class="block-display" style="margin-bottom: 10px;"></div>
+          <mat-radio-button value="Rechtstreeks">Kan rechtstreeks met ouders</mat-radio-button>
+          <div class="block-display" style="margin-bottom: 5px;"></div>
+          <mat-radio-button value="Via">Kan via</mat-radio-button>
+          <div class="block-display"></div>
+          <mat-form-field class="seventy-percent-width" *ngIf="communicatieOudersGeg=='Via'">
+            <input matInput placeholder="Communicatie kan via?" [formControl]="communicatieMiddelOuders" [(ngModel)]="communicatieMiddelOudersGeg">
+          </mat-form-field>
+        </mat-radio-group>
+        <div class="block-display" style="margin-bottom: 5px;"></div>
+        <mat-checkbox [formControl]="gemotiveerdVerslag" [(ngModel)]="gemotiveerdVerslagGeg">Beschikt uw kind over een gemotiveerd verslag?</mat-checkbox>
+        <div class="block-display"></div>
+        <mat-checkbox [formControl]="verslag" [(ngModel)]="verslagGeg">Beschikt uw kind over een verslag?</mat-checkbox>
+        <div class="block-display"></div>
+        <mat-checkbox [formControl]="ouderMeerwaarde" [(ngModel)]="ouderMeerwaardeGeg">Kan u als ouder een meerwaarde zijn voor onze school?</mat-checkbox>
+        <div class="block-display"></div>
+        <mat-form-field class="seventy-percent-width" *ngIf="ouderMeerwaardeGeg === true">
+            <mat-label>Andere of belangrijke opmerkingen</mat-label>
+            <textarea matInput cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="2" cdkAutosizeMaxRows="10" [formControl]="meerwaardeUitleg" [(ngModel)]="meerwaardeUitlegGeg"></textarea>
+          </mat-form-field>
+      </form>
+    </div>
+  </div>
+  <div class="central-sub">
+    <button mat-raised-button class="inschrijving-button bold-text" (click)="addValuesToObject()" routerLink="/schoolloopbaan" [routerLinkActive]="'current'">Volgende ></button>
+  </div>
+</div>

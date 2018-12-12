@@ -1,0 +1,13 @@
+{
+    "autoload" : {
+	"psr-4" : {
+	    "Ordersystem\\" : "classes/"
+	}
+    },
+    "require": {
+        "adoy/oauth2": "1.3.0",
+        "ivan-novakov/php-openid-connect-client": "dev-master",
+        "league/oauth2-client": "^2.4",
+        "iignatov/lightopenid": "*"
+    }
+}

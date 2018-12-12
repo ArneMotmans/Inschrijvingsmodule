@@ -1,0 +1,151 @@
+.central {
+    margin: auto;
+    width: 50%;
+}
+
+.central-sub {
+    margin: auto;
+    width: 25%;
+    margin-top: 10px;
+}
+
+.bold-text {
+    font-weight: bold;
+}
+
+.border-gray-background {
+    border: 5px;
+    border-style: groove;
+    background: rgb(190, 193, 197);
+    margin-top: 0px;
+}
+
+label {
+    margin-right: 10px;
+    font-size: 20px;
+}
+
+mat-radio-button {
+    margin-right: 10px;
+}
+.border {
+    border: 1px;
+    border-style: solid;
+    margin: 5px;
+}
+
+h3 {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.top-margin-change {
+    margin-top: 20px;
+}
+
+.little-left-margin {
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+
+.little-top-margin {
+    margin-top: 5px;
+}
+
+.reader-button {
+    background: gray;
+}
+
+.search-button {
+    background: gray;
+    float: right;
+}
+
+.naam-inputs {
+    width: 40%;
+}
+
+.roepnaam-input {
+    width: 35%;
+}
+
+.geboorteplaats-input {
+    width: 40%;
+}
+
+.geboortedatum-input {
+    width: 30%;
+}
+
+.nationaliteit-input {
+    width: 35%;
+}
+
+.straat-input {
+    width: 35%;
+}
+
+.gemeente-input {
+    width: 40%;
+}
+
+/* mat-radio-group {
+    position: absolute;
+    left: 1050px;
+} */
+
+mat-form-field {
+    margin-right: 25px;
+}
+
+mat-label {
+    font-weight: bold;
+}
+
+.seventy-percent-width {
+    width: 70%;
+}
+
+.ninety-percent-width {
+    width: 95%;
+}
+
+.little-width-change {
+    width: 60%;
+}
+
+.example-container {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+.select-menu {
+    width: 80%;
+}
+
+.inline-display {
+    display: inline;
+}
+
+.block-display {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.inschrijving-button {
+    background: gray;
+    
+}
+
+.little-bottom-margin {
+    margin-bottom: 5px;
+}
+
+.h1-blue {
+    color: blue;
+}
+
+.h1-red {
+    color: red;
+}

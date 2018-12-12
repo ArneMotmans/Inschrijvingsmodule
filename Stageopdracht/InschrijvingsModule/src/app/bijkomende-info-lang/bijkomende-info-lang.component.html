@@ -1,0 +1,94 @@
+<div class="central">
+  <div>
+    <h1 class="inline-display h1-blue">Bijkomende info</h1>
+    <div class="border">
+      <h3 class="border-gray-background">Extra info leerling</h3>
+      <div class="little-left-margin">
+        <mat-label>Kopie rapport ingediend</mat-label>
+        <div class="block-display"></div>
+        <mat-radio-group class="bold-text" [formControl]="koppieRapport" [(ngModel)]="koppieRapportGeg">
+          <mat-radio-button value="Ja">Ja</mat-radio-button>
+          <mat-radio-button value="Neen">Neen</mat-radio-button>
+        </mat-radio-group>
+        <div class="block-display"></div>
+        <mat-label>Kopie origineel getuigschrift ingediend</mat-label>
+        <div class="block-display"></div>
+        <mat-radio-group class="bold-text" [formControl]="getuigschrift" [(ngModel)]="getuigschriftGeg">          
+          <mat-radio-button value="Ja">Ja</mat-radio-button>
+          <mat-radio-button value="Neen">Neen</mat-radio-button>
+        </mat-radio-group>
+        <div class="block-display"></div>
+        <mat-label>Identiteitskaart ingediend</mat-label>
+        <div class="block-display"></div>
+        <mat-radio-group class="bold-text" [formControl]="identiteitskaartIn" [(ngModel)]="identiteitskaartInGeg">          
+          <mat-radio-button value="Ja">Ja</mat-radio-button>
+          <mat-radio-button value="Neen">Neen</mat-radio-button>
+        </mat-radio-group>
+        <div class="block-display"></div>
+        <mat-label>Attest leerprobleem/leeruitdaging CLB</mat-label>
+        <div class="block-display"></div>
+        <mat-radio-group class="bold-text" [formControl]="attestLeerprobleem" [(ngModel)]="attestLeerprobleemGeg">
+          <mat-radio-button value="Ja">Ja</mat-radio-button>
+          <mat-radio-button value="Neen">Neen</mat-radio-button>
+          <mat-radio-button value="NVT">NVT</mat-radio-button>
+        </mat-radio-group>
+        <div class="block-display"></div>
+        <mat-label *ngIf="jaar == 1">BaSO-fiche afgegeven</mat-label>
+        <div class="block-display"></div>
+        <mat-radio-group class="bold-text" *ngIf="jaar == 1" [formControl]="BASOfiche" [(ngModel)]="BASOficheGeg">
+          <mat-radio-button value="Ja">Ja</mat-radio-button>
+          <mat-radio-button value="Neen">Neen</mat-radio-button>
+        </mat-radio-group>
+        <div class="block-display"></div>
+        <mat-label style="display: inline;">Wens je gebruik te maken van de avondstudie? </mat-label>
+        <mat-label *ngIf="jaar == 2 || jaar == 3 || jaar == 4 || jaar == 5 || jaar == 6 || jaar == 7" style="display: inline;">Maandag, dinsdag, donderdag tot 16.50u</mat-label>
+        <div class="block-display"></div>
+        <mat-radio-group class="bold-text" [formControl]="avondstudie" [(ngModel)]="avondstudieGeg">
+          <mat-radio-button value="Ja">Ja</mat-radio-button>
+          <mat-radio-button value="Neen">Neen</mat-radio-button>          
+        </mat-radio-group>
+        <div class="block-display"></div>
+        <mat-label *ngIf="jaar == 3 || jaar == 4 || jaar == 5 || jaar == 6 || jaar == 7" style="display: inline;">Wens je gebruik te maken van de middagpas?  </mat-label>
+        <mat-label *ngIf="jaar == 3 || jaar == 4 || jaar == 5 || jaar == 6 || jaar == 7" style="display: inline;">Indien je aan de voorwaarden voldoet!</mat-label>
+        <div class="block-display"></div>
+        <mat-radio-group class="bold-text" *ngIf="jaar == 3 || jaar == 4 || jaar == 5 || jaar == 6 || jaar == 7" [formControl]="middagpas" [(ngModel)]="middagpasGeg">
+          <mat-radio-button value="Ja">Ja</mat-radio-button>
+          <mat-radio-button value="Neen">Neen</mat-radio-button>
+        </mat-radio-group>
+        <div class="block-display"></div>
+        <mat-form-field class="textarea-opmerkingen ninety-percent-width">
+          <mat-label>Voorkeur voor klasgenootjes op voorwaarde dat het om positieve keuzes gaat! (één naam gegarandeerd)
+          </mat-label>
+          <textarea matInput cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="2" cdkAutosizeMaxRows="10" [formControl]="voorkeurKlasgenootjes"
+            [(ngModel)]="voorkeurKlasgenootjesGeg"></textarea>
+        </mat-form-field>
+        <div class="block-display"></div>
+        <mat-form-field class="textarea-opmerkingen ninety-percent-width">
+          <mat-label>Waarom koos je voor deze nieuwe school, nieuwe richting?</mat-label>
+          <textarea matInput cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="2" cdkAutosizeMaxRows="10" [formControl]="motivatie"
+            [(ngModel)]="motivatieGeg"></textarea>
+        </mat-form-field>
+        <div class="block-display"></div>
+        <mat-label *ngIf="jaar == 1">Geeft u toestemming om te overleggen met de basisschool van uw kind?</mat-label>
+        <div class="block-display"></div>
+        <mat-radio-group class="bold-text" *ngIf="jaar == 1" [formControl]="toestemmingOverleggen" [(ngModel)]="toestemmingOverleggenGeg">          
+          <mat-radio-button value="Ja">Ja</mat-radio-button>
+          <mat-radio-button value="Neen">Neen</mat-radio-button>
+        </mat-radio-group>
+        <div class="block-display"></div>
+        <mat-label *ngIf="jaar == 3 || jaar == 4 || jaar == 5 || jaar == 6 || jaar == 7">In september worden alle ouders van nieuwe leerlingen uitgenodigd voor een eerste contact met de school</mat-label>
+        <div class="block-display"></div>
+        <mat-label *ngIf="jaar == 1 || jaar == 3 || jaar == 4 || jaar == 5 || jaar == 6 || jaar == 7" style="width: 50%">Vindt u het nodig om tijdens de eerste dagen van het schooljaar een bijkomend <br/> gesprek te hebben met de klassenleraar
+            i.v.m de aangehaalde problemen?</mat-label>
+            <div class="block-display"></div>
+        <mat-radio-group class="bold-text" *ngIf="jaar == 1 || jaar == 3 || jaar == 4 || jaar == 5 || jaar == 6 || jaar == 7" [formControl]="bijkomendGesprek" [(ngModel)]="bijkomendGesprekGeg">
+          <mat-radio-button value="Ja">Ja</mat-radio-button>
+          <mat-radio-button value="Neen">Neen</mat-radio-button>
+        </mat-radio-group>
+      </div>
+    </div>
+  </div>
+  <div class="central-sub">
+    <button mat-raised-button class="inschrijving-button bold-text" (click)="updateInschrijving()">Beëindig inschrijving</button>
+  </div>
+</div>

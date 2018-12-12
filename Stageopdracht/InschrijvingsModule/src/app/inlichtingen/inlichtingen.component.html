@@ -1,0 +1,125 @@
+<div class="central">
+  <div>
+    <h1 class="inline-display h1-blue">Inlichtingen</h1>
+    <h3>Heeft uw kind een erkend leerprobleem? indien ja, handelingsplan invullen!!</h3>
+    <div class="border">
+      <h3 class="border-gray-background">Invullen inlichtingen</h3>
+      <div>
+        <div class="little-left-margin" style="margin-bottom: 20px;">
+          <div style="overflow: hidden;">
+            <form class="little-top-margin border" style="float: left; margin-right: 5px;">
+              <h3 class="border-gray-background">Ontwikkelingstoornissen</h3>
+              <div style="margin: 10px; margin-right:110px;">
+                <mat-checkbox [formControl]="ADD" [(ngModel)]="ADDGeg">ADD</mat-checkbox>
+                <div class="block-display"></div>
+                <mat-checkbox [formControl]="ADHD" [(ngModel)]="ADHDGeg">ADHD</mat-checkbox>
+                <div class="block-display"></div>
+                <mat-checkbox [formControl]="ASS" [(ngModel)]="ASSGeg">ASS</mat-checkbox>
+                <div class="block-display"></div>
+                <mat-checkbox [formControl]="Fobieen" [(ngModel)]="FobieenGeg">Fobieën</mat-checkbox>
+                <div class="block-display"></div>
+                <mat-checkbox [formControl]="GillesDeLaTourette" [(ngModel)]="GillesDeLaTouretteGeg">Gilles de la Tourette</mat-checkbox>
+                <div class="block-display"></div>
+                <mat-checkbox [formControl]="Concentratie" [(ngModel)]="ConcentratieGeg">Concentratie</mat-checkbox>
+                <div class="block-display"></div>
+                <mat-checkbox [formControl]="NLD" [(ngModel)]="NLDGeg">NLD</mat-checkbox>
+                <div class="block-display" style="margin-bottom: 24.5px;"></div>
+                <mat-form-field class="textarea-opmerkingen">
+                  <mat-label>Andere of belangrijke opmerkingen</mat-label>
+                  <textarea matInput cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="2" cdkAutosizeMaxRows="10" [formControl]="andereOntwikkelingsStoornis"
+                    [(ngModel)]="andereOntwikkelingsStoornisGeg"></textarea>
+                </mat-form-field>
+              </div>
+            </form>
+            <form class="little-top-margin border" style="float: left;">
+              <h3 class="border-gray-background">Leerzorg</h3>
+              <div style="margin: 10px; margin-right: 110px;">
+                <mat-checkbox [formControl]="Dyscalculie" [(ngModel)]="DyscalculieGeg">Dyscalculie</mat-checkbox>
+                <div class="block-display"></div>
+                <mat-checkbox [formControl]="Dyslexie" [(ngModel)]="DyslexieGeg">Dyslexie</mat-checkbox>
+                <div class="block-display"></div>
+                <mat-checkbox [formControl]="Dysorthografie" [(ngModel)]="DysorthografieGeg">Dysorthografie</mat-checkbox>
+                <div class="block-display"></div>
+                <mat-checkbox [formControl]="Dyspraxie" [(ngModel)]="DyspraxieGeg">Dyspraxie</mat-checkbox>
+                <div class="block-display"></div>
+                <mat-checkbox [formControl]="Faalangst" [(ngModel)]="FaalAngstGeg">Faalangst</mat-checkbox>
+                <div class="block-display"></div>
+                <mat-checkbox [formControl]="Hoogbegaafd" [(ngModel)]="HoogbegaafdGeg">Hoogbegaafd</mat-checkbox>
+                <div class="block-display"></div>
+                <mat-checkbox [formControl]="Taalproblemen" [(ngModel)]="TaalproblemenGeg">Taalproblemen</mat-checkbox>
+                <div class="block-display"></div>
+                <mat-checkbox [formControl]="Hoogsensitief" [(ngModel)]="HoogsensitiefGeg">Hoogsensitief</mat-checkbox>
+                <div class="block-display"></div>
+                <mat-form-field class="textarea-opmerkingen">
+                  <mat-label>Andere of belangrijke opmerkingen</mat-label>
+                  <textarea matInput cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="2" cdkAutosizeMaxRows="10" [formControl]="leerzorgAndere"
+                    [(ngModel)]="leerzorgAndereGeg"></textarea>
+                </mat-form-field>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="little-left-margin" style="margin-bottom: 20px;">
+          <div style="overflow: hidden;">
+            <form class="little-top-margin border" style="float: left; margin-right: 5px;">
+              <h3 class="border-gray-background">Aandoeningen</h3>
+              <div style="margin: 10px; margin-right: 110px;">
+                <mat-checkbox [formControl]="Allergie" [(ngModel)]="AllergieGeg">Allergie</mat-checkbox>
+                <div class="block-display"></div>
+                <mat-checkbox [formControl]="Astma" [(ngModel)]="AstmaGeg">Astma</mat-checkbox>
+                <div class="block-display"></div>
+                <mat-checkbox [formControl]="Epilepsie" [(ngModel)]="EpilepsieGeg">Epilepsie</mat-checkbox>
+                <div class="block-display"></div>
+                <mat-checkbox [formControl]="Gehoorproblemen" [(ngModel)]="GehoorproblemenGeg">Gehoorproblemen</mat-checkbox>
+                <div class="block-display"></div>
+                <mat-checkbox [formControl]="Zichtsprobleem" [(ngModel)]="ZichtprobleemGeg">Zichtsprobleem</mat-checkbox>
+                <div class="block-display"></div>
+                <mat-checkbox [formControl]="Hooikoorts" [(ngModel)]="HooikoortsGeg">Hooikoorts</mat-checkbox>
+                <div class="block-display"></div>
+                <mat-checkbox [formControl]="Migraine" [(ngModel)]="MigraineGeg">Migraine</mat-checkbox>
+                <div class="block-display"></div>
+                <mat-checkbox [formControl]="Reuma" [(ngModel)]="ReumaGeg">Reuma</mat-checkbox>
+                <div class="block-display"></div>
+                <mat-checkbox [formControl]="Hartafwijking" [(ngModel)]="HartafwijkingGeg">Hartafwijking</mat-checkbox>
+                <div class="block-display"></div>
+                <mat-checkbox [formControl]="Diabetes" [(ngModel)]="DiabetesGeg">Diabetes</mat-checkbox>
+                <div class="block-display"></div>
+                <mat-checkbox [formControl]="LactoseInt" [(ngModel)]="LactoseIntGeg">Lactose-intolerantie</mat-checkbox>
+                <div class="block-display"></div>
+                <mat-checkbox [formControl]="MotorischeProb" [(ngModel)]="MotorischeProbGeg">Motorische problemen</mat-checkbox>
+                <div class="block-display"></div>
+                <mat-checkbox [formControl]="Zindelijkheid" [(ngModel)]="ZindelijkheidGeg">Zindelijkheid</mat-checkbox>
+                <div class="block-display"></div>
+                <mat-form-field class="textarea-opmerkingen">
+                  <mat-label>Andere of belangrijke opmerkingen</mat-label>
+                  <textarea matInput cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="2" cdkAutosizeMaxRows="10" [formControl]="aandoeningenAndere"
+                    [(ngModel)]="aandoeningenAndereGeg"></textarea>
+                </mat-form-field>
+              </div>
+            </form>
+            <form class="little-top-margin border" style="float: left;">
+              <h3 class="border-gray-background">Medicatie</h3>
+              <div style="margin: 10px; margin-right: 110px">
+                <mat-checkbox [formControl]="Rilatine" [(ngModel)]="RilatineGeg">Rilatine</mat-checkbox>
+                <div class="block-display"></div>
+                <mat-checkbox [formControl]="Concerta" [(ngModel)]="ConcertaGeg">Concerta</mat-checkbox>
+                <div class="block-display"></div>
+                <mat-checkbox [formControl]="Risperdal" [(ngModel)]="RisperdalGeg">Risperdal</mat-checkbox>
+                <div class="block-display"></div>
+                <mat-form-field class="textarea-opmerkingen" style="margin-bottom: 240px;">
+                  <mat-label>Andere of belangrijke opmerkingen</mat-label>
+                  <textarea matInput cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="2" cdkAutosizeMaxRows="10" [formControl]="medicatieAndere"
+                    [(ngModel)]="medicatieAndereGeg"></textarea>
+                </mat-form-field>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="central-sub">
+    <button mat-raised-button class="inschrijving-button bold-text" (click)="updateInschrijving()" routerLink="/bijkomende-info-kort"
+      [routerLinkActive]="'current'">Volgende ></button>
+  </div>
+</div>

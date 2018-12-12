@@ -1,0 +1,102 @@
+<div class="central">
+  <div>
+    <h1 class="inline-display h1-blue">Gegevens over </h1><h1 class="inline-display h1-red">DE LEERLING</h1>
+    <div class="border">
+        <h3 class="border-gray-background">Invullen gegevens van de leerling</h3>
+        <div class="little-left-margin">
+                <mat-form-field class="roepnaam-input">
+                        <input matInput placeholder="Naam van de student" [(ngModel)]="naamStud">
+                </mat-form-field>
+                <mat-form-field class="roepnaam-input">
+                        <input matInput placeholder="Voornaam van de student" [(ngModel)]="voornaamStud">
+                </mat-form-field>
+          <form class="little-top-margin">                      
+                    <div class="block-display"></div>
+                    <mat-form-field class="roepnaam-input">
+                        <input matInput placeholder="Roepnaam van de student" [formControl]="roepnaam" [(ngModel)]="roepnaamStud">
+                    </mat-form-field>
+                    <mat-radio-group class="bold-text" [formControl]="geslacht" [(ngModel)]="geslachtStud">
+                        <label>Geslacht: </label>
+                        <mat-radio-button value="M">Mannelijk</mat-radio-button>
+                        <mat-radio-button value="V">Vrouwelijk</mat-radio-button>
+                    </mat-radio-group>
+                    <div class="block-display"></div>
+                    <mat-form-field class="geboorteplaats-input">
+                        <input matInput placeholder="Geboorteplaats" aria-label="Geboorteplaats" [matAutocomplete]="auto2" [formControl]="geboorteplaatsCtrl" required [(ngModel)]="geboorteplaatsStud">
+                        <mat-error *ngIf="geboorteplaatsCtrl.invalid">Geboorteplaats invullen is verplicht</mat-error>   
+                        <mat-autocomplete #auto2="matAutocomplete">
+                            <mat-option *ngFor="let gemeente of filteredGemeenten | async" [value]="gemeente.deelgemeente">
+                              <span>{{gemeente.deelgemeente}}</span>
+                            </mat-option>
+                          </mat-autocomplete>
+                        <!-- <mat-select placeholder="Favorite food">
+                            <mat-option *ngFor="let gemeente of gemeentes" [value]="gemeente.deelgemeente">
+                              {{gemeente.deelgemeente}}
+                            </mat-option>
+                          </mat-select>                 -->
+                    </mat-form-field>                    
+                    <div class="block-display"></div>
+                    <mat-form-field>
+                        <input matInput placeholder="Rijksregisternummer" [formControl]="rijksregisternummer" [(ngModel)]="rijksRegisterNummerStud">
+                    </mat-form-field>
+                    <mat-form-field class="nationaliteit-input">
+                        <input matInput placeholder="Nationaliteit" aria-label="Nationaliteit" [matAutocomplete]="auto" [formControl]="nationaliteitCtrl" required [(ngModel)]="nationaliteitStud">
+                        <mat-error *ngIf="nationaliteitCtrl.invalid">Nationaliteit invullen is verplicht</mat-error>
+                        <mat-autocomplete #auto="matAutocomplete">
+                            <mat-option *ngFor="let nationaliteit of filteredNationaliteiten | async" [value]="nationaliteit">
+                              <span>{{nationaliteit}}</span>
+                            </mat-option>
+                          </mat-autocomplete>
+                    </mat-form-field>
+                    <div class="block-display"></div>
+                    <mat-form-field class="straat-input">
+                        <input matInput placeholder="Straat" required [formControl]="straat" [(ngModel)]="straatStud">
+                        <mat-error *ngIf="straat.invalid">Straat invullen is verplicht</mat-error>
+                    </mat-form-field>
+                    <mat-form-field>
+                        <input matInput placeholder="Nr." required [formControl]="nummer" [(ngModel)]="huisnummerStud">
+                        <mat-error *ngIf="nummer.invalid">Nummer invullen is verplicht</mat-error>
+                    </mat-form-field>
+                    <mat-form-field>
+                        <input matInput placeholder="Bus" [formControl]="bus" [(ngModel)]="postcodeStud">
+                    </mat-form-field>
+                    <mat-form-field class="block-display gemeente-input">
+                        <input matInput placeholder="Gemeente" required [formControl]="gemeente" [(ngModel)]="gemeenteStud">
+                        <mat-error *ngIf="gemeente.invalid">Gemeente invullen is verplicht</mat-error>
+                    </mat-form-field>
+                    <mat-form-field>
+                        <input matInput placeholder="Telefoon" [formControl]="telefoon" [(ngModel)]="telefoonStud">
+                    </mat-form-field>
+                    <mat-form-field>
+                        <input matInput placeholder="Gsm" [formControl]="gsm" [(ngModel)]="gsmStud">
+                    </mat-form-field>
+                    <div class="block-display"></div>
+                    <mat-form-field>
+                        <input matInput placeholder="Noodtelefoon" [formControl]="noodtelefoon" [(ngModel)]="noodTelefoonStud">
+                    </mat-form-field>
+                    <mat-form-field>
+                        <mat-select placeholder="Noodnummer van ..." [formControl]="noodnummer" [(ngModel)]="noodnummerPers">
+                          <mat-option *ngFor="let persoon of personen" [value]="persoon">
+                            {{persoon}}
+                          </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                    <mat-form-field class="block-display">
+                        <input matInput placeholder="Email" required [formControl]="email" [(ngModel)]="emailStud">
+                        <mat-error *ngIf="email.invalid">Email invullen is verplicht</mat-error>
+                    </mat-form-field>
+                    <div class="block-display"></div>
+                    <mat-radio-group class="bold-text" [formControl]="internet" [(ngModel)]="internetStud">
+                        <label>Beschikt u thuis over een internetaansluiting? </label>
+                        <mat-radio-button value="Ja">Ja</mat-radio-button>
+                        <mat-radio-button value="Nee">Nee</mat-radio-button>
+                    </mat-radio-group>
+            </form>
+        </div>         
+    </div>    
+  </div>  
+  <div class="central-sub">
+    <button mat-raised-button class="inschrijving-button bold-text" [disabled]="geboorteplaatsCtrl.invalid || nationaliteitCtrl.invalid || straat.invalid || nummer.invalid || gemeente.invalid || email.invalid" (click)="logInschrijving()">Volgende ></button>
+  </div>
+</div>
+

@@ -1,0 +1,57 @@
+<div class="central" ng-app="myApp" ng-controller="myCtrl">
+    <div>
+        <h1 class="inline-display">Inschrijfportaal</h1>
+        <button *ngIf="bool == false" mat-raised-button class="search-button inline-display" (click)="getTempInschrijving()">Zoek op code</button>
+        <input *ngIf="bool == false" type="text" placeholder="Security Code" class="inline-display" style="width: 100px; height: 30px; margin-left: 20px;" [(ngModel)]="idToSearch"/>
+    </div>  
+    <div class="border top-margin-change">
+      <h3 class="border-gray-background">Inschrijving schooljaar 2018-2019</h3>
+      <div class="border">
+        <h3 class="border-gray-background">Lees eID of manuele ingave</h3>
+        <div class="little-left-margin">
+            <button mat-raised-button class="reader-button" (click)="loadIDCardData()">Lees ID-Kaart</button>            
+            <mat-spinner style="float: right; margin-right: 150px; margin-top: 80px;" class="inline-display" mode="{{completeSpinner}}"></mat-spinner>
+            <form class="little-top-margin">
+                <div class="example-container">
+                    <mat-form-field>
+                      <input matInput placeholder="Naam van de student" [formControl]="naam" required [(ngModel)]="naamStud" id="testNaam">
+                      <mat-error *ngIf="naam.invalid">Naam invullen is verplicht</mat-error>
+                    </mat-form-field>                
+                    <mat-form-field>
+                        <input matInput placeholder="Voornaam van de student" [formControl]="voornaam" required [(ngModel)]="voornaamStud">
+                        <mat-error *ngIf="voornaam.invalid">Voornaam invullen is verplicht</mat-error>
+                    </mat-form-field>
+                    <mat-form-field class="little-width-change">
+                        <input matInput [matDatepicker]="picker" placeholder="Geboortedatum" [formControl]="geboorteDatum" required [(ngModel)]="geboorteDatumStud">
+                        <mat-error *ngIf="geboorteDatum.invalid">Geboortedatum invullen is verplicht</mat-error>
+                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                        <mat-datepicker #picker></mat-datepicker>
+                      </mat-form-field> 
+                      <mat-form-field>
+                            <input matInput placeholder="Studierichting" required aria-label="Studierichting" [matAutocomplete]="auto" (ngModelChange)="updateKeuzeVakken($event)" [formControl]="studierichtingenCtrl" [(ngModel)]="studieRichtingStud">
+                            <mat-error *ngIf="studierichtingenCtrl.invalid">Studierichting invullen is verplicht</mat-error>
+                            <mat-autocomplete #auto="matAutocomplete">
+                              <mat-option *ngFor="let richting of filteredStudierichtingen | async" [value]="richting.naam">
+                                <span>{{richting.naam}}</span>
+                              </mat-option>
+                            </mat-autocomplete>
+                        </mat-form-field>
+                        <mat-form-field *ngIf="checkStudieRichting()">
+                            <input matInput placeholder="Keuzevak" required aria-label="Keuzevak" [matAutocomplete]="autoVak" [formControl]="keuzevakCtrl" [(ngModel)]="keuzevakStud">
+                            <mat-autocomplete #autoVak="matAutocomplete">
+                              <mat-option *ngFor="let vak of filteredKeuzeVakken | async" [value]="vak">
+                                <span>{{vak}}</span>
+                              </mat-option>
+                            </mat-autocomplete>
+                        </mat-form-field>        
+                  </div>
+            </form>          
+        </div>           
+      </div> 
+    </div>
+    <div class="central-sub">
+        <button mat-raised-button class="inschrijving-button bold-text" [disabled]="naam.invalid || keuzevakCtrl.invalid || voornaam.invalid || geboorteDatum.invalid || studierichtingenCtrl.invalid" title="Gegevens leerling" (click)="addValuesToObject()">Volgende ></button>
+    </div>  
+</div>
+  
+  

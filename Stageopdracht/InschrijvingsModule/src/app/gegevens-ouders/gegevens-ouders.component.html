@@ -1,0 +1,120 @@
+<div class="central">
+  <div>
+    <h1 class="inline-display h1-blue">Gegevens over </h1>
+    <h1 class="inline-display h1-red">DE OUDERS</h1>
+    <div class="border">
+      <h3 class="border-gray-background">Invullen gegevens van de ouders</h3>
+      <div class="little-left-margin">
+        <div class="border">
+          <h3 class="border-gray-background">Gegevens vader</h3>
+          <div class="little-left-margin">
+            <form class="little-top-margin">
+              <div class="block-display"></div>
+              <mat-form-field class="roepnaam-input">
+                <input matInput placeholder="Naam van de vader" [formControl]="naamVader" [(ngModel)]="naamGegVader">
+              </mat-form-field>
+              <mat-form-field class="roepnaam-input">
+                <input matInput placeholder="Voornaam van de vader" [formControl]="voornaamVader" [(ngModel)]="voornaamGegVader">
+              </mat-form-field>
+              <div class="block-display"></div>
+              <mat-form-field class="geboorteplaats-input">
+                <input matInput placeholder="Beroep" [formControl]="beroepVader" [(ngModel)]="beroepGegVader">
+              </mat-form-field>
+              <mat-form-field class="nationaliteit-input">
+                <input matInput placeholder="Nationaliteit" [formControl]="nationaliteitVader" required [(ngModel)]="nationaliteitGegVader">
+                <mat-error *ngIf="nationaliteitVader.invalid">Nationaliteit invullen is verplicht</mat-error>
+              </mat-form-field>
+              <div class="block-display"></div>
+              <mat-form-field class="straat-input">
+                <input matInput placeholder="GSM" [formControl]="gsmVader" [(ngModel)]="gsmGegVader">
+              </mat-form-field>
+              <mat-form-field class="roepnaam-input">
+                <input matInput placeholder="Email" [formControl]="emailVader" required [(ngModel)]="emailGegVader">
+                <mat-error *ngIf="emailVader.invalid">Email invullen is verplicht</mat-error>
+              </mat-form-field>
+              <div class="block-display"></div>
+              <mat-form-field class="burgerlijke-staat-input">
+                <mat-select placeholder="Burgerlijke staat" [formControl]="staatVader" [(ngModel)]="staatGegVader">
+                  <mat-option *ngFor="let staat of staten" [value]="staat">
+                    {{staat}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+              <div class="block-display"></div>
+              <p>Ander adres vader (Indien niet samenwonend): </p>
+              <div class="block-display"></div>
+              <mat-form-field class="straat-input">
+                <input matInput placeholder="Straat" [formControl]="straatVader" [(ngModel)]="straatGegVader">
+              </mat-form-field>
+              <mat-form-field>
+                <input matInput placeholder="Nr." [formControl]="nrVader" [(ngModel)]="nrGegVader">
+              </mat-form-field>
+              <mat-form-field class="bus-input">
+                <input matInput placeholder="Bus" [formControl]="busVader" [(ngModel)]="busGegVader">
+              </mat-form-field>
+              <mat-form-field class="block-display gemeente-input">
+                <input matInput placeholder="Gemeente" [formControl]="gemeenteVader" [(ngModel)]="gemeenteGegVader">
+              </mat-form-field>
+            </form>
+          </div>
+        </div>
+        <div class="border">
+          <h3 class="border-gray-background">Gegevens moeder</h3>
+          <div class="little-left-margin">
+            <form class="little-top-margin">
+              <div class="block-display"></div>
+              <mat-form-field class="roepnaam-input">
+                <input matInput placeholder="Naam van de moeder" [formControl]="naamMoeder" [(ngModel)]="naamGegMoeder">
+              </mat-form-field>
+              <mat-form-field class="roepnaam-input">
+                <input matInput placeholder="Voornaam van de moeder" [formControl]="voornaamMoeder" [(ngModel)]="voornaamGegMoeder">
+              </mat-form-field>
+              <div class="block-display"></div>
+              <mat-form-field class="geboorteplaats-input">
+                <input matInput placeholder="Beroep" [formControl]="beroepMoeder" [(ngModel)]="beroepGegMoeder">
+              </mat-form-field>
+              <mat-form-field class="nationaliteit-input">
+                <input matInput placeholder="Nationaliteit" [formControl]="nationaliteitMoeder" required [(ngModel)]="nationaliteitGegMoeder">
+                <mat-error *ngIf="nationaliteitMoeder.invalid">Nationaliteit invullen is verplicht</mat-error>
+              </mat-form-field>
+              <div class="block-display"></div>
+              <mat-form-field class="straat-input">
+                <input matInput placeholder="GSM" [formControl]="gsmMoeder" [(ngModel)]="gsmGegMoeder">
+              </mat-form-field>
+              <mat-form-field class="roepnaam-input">
+                <input matInput placeholder="Email" [formControl]="emailMoeder" required [(ngModel)]="emailGegMoeder">
+                <mat-error *ngIf="emailMoeder.invalid">Email invullen is verplicht</mat-error>
+              </mat-form-field>
+              <div class="block-display"></div>
+              <mat-form-field class="burgerlijke-staat-input">
+                <mat-select placeholder="Burgerlijke staat" [formControl]="staatMoeder" [(ngModel)]="staatGegMoeder">
+                  <mat-option *ngFor="let staat of staten" [value]="staat">
+                    {{staat}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+              <div class="block-display"></div>
+              <p>Ander adres moeder (Indien niet samenwonend): </p>
+              <div class="block-display"></div>
+              <mat-form-field class="straat-input">
+                <input matInput placeholder="Straat" [formControl]="straatMoeder" [(ngModel)]="straatGegMoeder">
+              </mat-form-field>
+              <mat-form-field>
+                <input matInput placeholder="Nr." [formControl]="nrMoeder" [(ngModel)]="nrGegMoeder">
+              </mat-form-field>
+              <mat-form-field class="bus-input">
+                <input matInput placeholder="Bus" [formControl]="busMoeder" [(ngModel)]="busGegMoeder">
+              </mat-form-field>
+              <mat-form-field class="block-display gemeente-input">
+                <input matInput placeholder="Gemeente" [formControl]="gemeenteMoeder" [(ngModel)]="gemeenteGegMoeder">
+              </mat-form-field>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="central-sub">
+    <button mat-raised-button class="inschrijving-button bold-text"  (click)="updateInschrijving()" routerLink="/gezins-situatie" [routerLinkActive]="'current'" [disabled]="nationaliteitMoeder.invalid || nationaliteitVader.invalid || emailMoeder.invalid || emailVader.invalid">Volgende ></button>
+  </div>
+</div>

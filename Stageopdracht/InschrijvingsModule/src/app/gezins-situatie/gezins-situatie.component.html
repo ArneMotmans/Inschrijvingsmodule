@@ -1,0 +1,94 @@
+<div class="central">
+  <div>
+    <h1 class="inline-display h1-blue">Gezinssituatie</h1>
+    <div class="border">
+      <h3 class="border-gray-background">Invullen gegeves over gezinssituatie</h3>
+      <div class="little-left-margin">
+        <div class="border">
+          <h3 class="border-gray-background">Thuissituatie</h3>
+          <div class="little-left-margin">
+            <form class="little-top-margin">
+              <div class="block-display"></div>
+              <mat-checkbox [formControl]="oudersGescheiden" [(ngModel)]="oudersGescheidenGeg">Ouders gescheiden</mat-checkbox>
+              <div class="block-display"></div>
+              <mat-checkbox [formControl]="oudersCo" [(ngModel)]="oudersCoGeg">Co-ouderschap</mat-checkbox>
+              <div class="block-display"></div>
+              <mat-checkbox [formControl]="vaderHoederecht" [(ngModel)]="vaderHoedderechtGeg">Hoedderecht vader</mat-checkbox>
+              <div class="block-display"></div>
+              <mat-checkbox [formControl]="moederHoederecht" [(ngModel)]="moederHoedderechtGeg">Hoedderecht moeder</mat-checkbox>
+              <div class="block-display"></div>
+              <mat-checkbox [formControl]="contactVader" [(ngModel)]="contactVaderGeg">Geen contact vader</mat-checkbox>
+              <div class="block-display"></div>
+              <mat-checkbox [formControl]="contactMoeder" [(ngModel)]="contactMoederGeg">Geen contact moeder</mat-checkbox>
+              <div class="block-display"></div>
+              <mat-checkbox [formControl]="onvastVerblijf" [(ngModel)]="onvastVerblijfGeg">Kinderen van ouders zonder vaste verblijfplaats</mat-checkbox>
+              <div class="block-display"></div>
+              <mat-checkbox [formControl]="vaderOverleden" [(ngModel)]="vaderOverledenGeg">Vader overleden</mat-checkbox>
+              <div class="block-display"></div>
+              <mat-checkbox [formControl]="moederOverleden" [(ngModel)]="moederOverledenGeg">Moeder overleden</mat-checkbox>
+              <div class="block-display"></div>
+              <mat-checkbox [formControl]="broerOverleden" [(ngModel)]="broerOverledenGeg">Broer overleden</mat-checkbox>
+              <div class="block-display"></div>
+              <mat-checkbox [formControl]="zusOverleden" [(ngModel)]="zusOverledenGeg">Zus overleden</mat-checkbox>
+              <div class="block-display"></div>
+              <mat-checkbox [formControl]="ziekFamilielid" [(ngModel)]="ziekFamilielidGeg">Ernstig ziek familielid</mat-checkbox>
+              <div class="block-display"></div>
+              <mat-checkbox [formControl]="ondertoezichtOfJeugdinstelling" [(ngModel)]="ondertoezichtOfJeugdinstellingGeg">Ondertoezicht of jeugdinstelling</mat-checkbox>
+              <div class="block-display"></div>
+              <mat-checkbox [formControl]="internaat" [(ngModel)]="internaatGeg">Internaatsleerling</mat-checkbox>
+              <div class="block-display"></div>
+              <mat-form-field class="width-textarea">
+                <mat-label>Andere of belangrijke opmerkingen</mat-label>
+                <textarea matInput cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="2" cdkAutosizeMaxRows="10" [formControl]="andereOpmerkingen" [(ngModel)]="andereOpmerkingenGeg"></textarea>
+              </mat-form-field>
+            </form>
+          </div>
+        </div>
+        <div class="border">
+          <h3 class="border-gray-background">Verantwoordelijke opvoeding indien anders dan ouders</h3>
+          <div class="little-left-margin">
+            <form class="little-top-margin">
+              <div class="block-display"></div>
+              <mat-form-field class="roepnaam-input">
+                <input matInput placeholder="Naam" [formControl]="naamVoogd" [(ngModel)]="naamVoogdGeg">
+              </mat-form-field>
+              <mat-form-field class="roepnaam-input">
+                <input matInput placeholder="Voornaam" [formControl]="voornaamVoogd" [(ngModel)]="voornaamVoogdGeg">
+              </mat-form-field>
+              <div class="block-display"></div>
+              <mat-form-field class="eighty-percent-width">
+                <input matInput placeholder="Relatie tot de leerling" [formControl]="voogdRelatieTotLeerling" [(ngModel)]="voogdRelatieTotLeerlingGeg">
+              </mat-form-field>
+              <mat-form-field class="eighty-percent-width">
+                <input matInput placeholder="Instelling" [formControl]="instellingVoogd" [(ngModel)]="instellingVoogdGeg">
+              </mat-form-field>
+              <div class="block-display"></div>
+              <mat-form-field class="straat-input">
+                <input matInput placeholder="GSM" [formControl]="gsmVoogd" [(ngModel)]="gsmVoogdGeg">
+              </mat-form-field>
+              <mat-form-field class="fifty-percent-width">
+                <input matInput placeholder="Email" [formControl]="emailVoogd" [(ngModel)]="emailVoogdGeg">
+              </mat-form-field>
+              <div class="block-display"></div>
+              <mat-form-field class="fifty-percent-width">
+                <input matInput placeholder="Straat" [formControl]="straatVoogd" [(ngModel)]="straatVoogdGeg">
+              </mat-form-field>
+              <mat-form-field class="ten-percent-width">
+                <input matInput placeholder="Nr." [formControl]="nrVoogd" [(ngModel)]="nrVoogdGeg">
+              </mat-form-field>
+              <mat-form-field class="ten-percent-width">
+                <input matInput placeholder="Bus" [formControl]="busVoogd" [(ngModel)]="busVoogdGeg">
+              </mat-form-field>
+              <mat-form-field class="fifty-percent-width">
+                <input matInput placeholder="Gemeente" [formControl]="gemeenteVoogd" [(ngModel)]="gemeenteVoogdGeg">
+              </mat-form-field>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="central-sub">
+      <button mat-raised-button class="inschrijving-button bold-text"  (click)="updateInschrijving()" routerLink="/nuttige_informatie" [routerLinkActive]="'current'">Volgende ></button>
+    </div>
+</div>
