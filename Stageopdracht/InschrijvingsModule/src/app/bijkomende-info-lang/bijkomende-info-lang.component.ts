@@ -131,7 +131,7 @@ export class BijkomendeInfoLangComponent implements OnInit {
     doc.text("Gegevens leerling", 10, 90);
 
     doc.setFontType("default");
-    doc.text("Naam en voornaam:       " + AES.decrypt(this.inschrijving.naam, environment.tmpAESkey).toString(enc.Utf8) + " " + this.inschrijving.voornaam, 10, 96);
+    doc.text("Naam en voornaam:       " + this.inschrijving.naam + " " + this.inschrijving.voornaam, 10, 96);
 
     if(this.service.getChecked() == true) {
       var year = this.inschrijving.geboorteDatum.toString().substring(0,4);
