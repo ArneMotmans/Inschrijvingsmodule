@@ -221,7 +221,6 @@ export class InschrijvingsAanzetComponent implements OnInit {
         startWith(''),
         map(value => this._filter(value))
         );
-      console.log(this.keuzevakken);
     } else if (richting.indexOf("1B") + 1) {
       this.keuzevakken = ["Bijvak1", "Bijvak2", "Bijvak3"];
       this.filteredKeuzeVakken = this.keuzevakCtrl.valueChanges
@@ -229,7 +228,6 @@ export class InschrijvingsAanzetComponent implements OnInit {
         startWith(''),
         map(value => this._filter(value))
         );
-      console.log(this.keuzevakken);
     } else if (richting.indexOf("2A") + 1) {
       this.keuzevakken = ["Test1", "Test2", "Test3"];
       this.filteredKeuzeVakken = this.keuzevakCtrl.valueChanges
@@ -237,7 +235,6 @@ export class InschrijvingsAanzetComponent implements OnInit {
         startWith(''),
         map(value => this._filter(value))
         );
-      console.log(this.keuzevakken);
     } else if (richting.indexOf("2B") + 1) {
       this.keuzevakken = ["Lol1", "Lol2", "Lol3"];
       this.filteredKeuzeVakken = this.keuzevakCtrl.valueChanges
@@ -245,7 +242,6 @@ export class InschrijvingsAanzetComponent implements OnInit {
         startWith(''),
         map(value => this._filter(value))
         );
-      console.log(this.keuzevakken);
     } else if (richting.indexOf("3") + 1) {
       this.keuzevakken = ["Voorbeeld1", "Voorbeeld2", "Voorbeeld3"];
       this.filteredKeuzeVakken = this.keuzevakCtrl.valueChanges
@@ -253,7 +249,6 @@ export class InschrijvingsAanzetComponent implements OnInit {
         startWith(''),
         map(value => this._filter(value))
         );
-      console.log(this.keuzevakken);
     }
   }
 
